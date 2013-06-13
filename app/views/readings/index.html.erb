@@ -1,6 +1,6 @@
 <h1>Listing readings</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -19,7 +19,11 @@
       <tr>
         <td><%= reading.title %></td>
         <td><%= reading.author %></td>
-        <td><%= reading.progress %></td>
+        <td>
+          <div class="progress progress-success progress-striped active" style="margin-bottom: 9px;">
+          <div class="bar" style="width: <%= reading.progress %>"></div>
+        </td>
+        </div>
         <td><%= reading.start %></td>
         <td><%= reading.comment %></td>
         <td><%= link_to 'Show', reading %></td>
