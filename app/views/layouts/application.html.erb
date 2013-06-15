@@ -2,19 +2,22 @@
 <html>
 <head>
   <title>Book</title>
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+
 </head>
 <body>
   <ul>
     <% if admin_signed_in? %>
     <li>
       <%= link_to 'Log out', destroy_admin_session_path, :method=>'delete' %>
-    </li>
-      <% elsif %>
-    <li>
-      <%= link_to 'Login', new_admin_session_path %>
     </li>
       <% end %>
   <p class="notice"><%= notice %></p>
