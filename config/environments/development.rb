@@ -27,6 +27,10 @@ Book::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # Setting default mailer for device
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # Start rails console with pry
   silence_warnings do
     begin
       require 'pry'

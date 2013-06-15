@@ -58,3 +58,6 @@ gem 'carrierwave'
 
 # Pry
 gem 'pry'
+
+# Run Server with Puma
+gem 'puma'

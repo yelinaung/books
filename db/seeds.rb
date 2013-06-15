@@ -14,4 +14,7 @@ books = Reading.create([
   { title: 'Book5', author: 'Maung Htin', progress: '71%', start: '01-01-2013', comment: 'Nice'},
 ])
 
+admins = Admin.new ({ name: "Admin", email:"admin@localhost.com", password:"12345678", password_confirmation:"12345678" })
+admins.save!
+
 puts 'Seeding done!'

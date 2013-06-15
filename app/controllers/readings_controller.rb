@@ -1,5 +1,6 @@
 class ReadingsController < ApplicationController
   before_action :set_reading, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!, :only => [:new, :edit, :destroy]
 
   # GET /readings
   # GET /readings.json
