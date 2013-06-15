@@ -61,3 +61,11 @@ gem 'pry'
 
 # Run Server with Puma
 gem 'puma'
+
+# Better Errors
+group :development do
+  gem "better_errors"
+end
+
+# RMaigick
+gem 'rmagick'

@@ -2,6 +2,7 @@
 
 <div class="content">
   <% @readings.each do |book| %>
+  <span> <%= image_tag book.picture %></span>
   <span> Title </span> : <span class="book-title"><%= book.title %></span><br>
   <span> Author </span> : <span class="author"><%= book.author %></span><br>
   <span> Start </span> : <span class="book-start"><%= book.start %></span><br>
