@@ -1,39 +1,23 @@
-<h1>Listing readings</h1>
+<h1>My readings</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Progress</th>
-      <th>Start</th>
-      <th>Comment</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @readings.each do |reading| %>
-      <tr>
-        <td><%= reading.title %></td>
-        <td><%= reading.author %></td>
-        <td>
-          <div class="progress progress-success progress-striped active" style="margin-bottom: 9px;">
-          <div class="bar" style="width: <%= reading.progress %>"></div>
-        </td>
-        </div>
-        <td><%= reading.start %></td>
-        <td><%= reading.comment %></td>
-        <td><%= link_to 'Show', reading %></td>
-        <td><%= link_to 'Edit', edit_reading_path(reading) %></td>
-        <td><%= link_to 'Destroy', reading, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="content">
+  <% @readings.each do |book| %>
+  <span> Title </span> : <span class="book-title"><%= book.title %></span><br>
+  <span> Author </span> : <span class="author"><%= book.author %></span><br>
+  <span> Start </span> : <span class="book-start"><%= book.start %></span><br>
+  <span> Progress </span> : <span class="progress"><%= book.progress %></span><br>
+  <span> Comment </span> : <span><%= book.comment %></span><br>
+  <div class="divider">
+  </div>
+<div>
+  <% if admin_signed_in? %>
+    <%= link_to 'New Reading', new_reading_path %>
+    <%= link_to 'Show', book %>
+    <%= link_to 'Edit', edit_reading_path(book) %></td>
+    <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %>
+</div>
+</div>
 <br>
 
-<%= link_to 'New Reading', new_reading_path %>

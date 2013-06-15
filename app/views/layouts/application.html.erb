@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Book</title>
+  <title>YLA's Reading</title>
   <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -14,16 +14,15 @@
 
 </head>
 <body>
-  <ul>
-    <% if admin_signed_in? %>
-    <li>
-      <%= link_to 'Log out', destroy_admin_session_path, :method=>'delete' %>
-    </li>
-      <% end %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-<%= yield %>
-
+<% if admin_signed_in? %>
+<%= link_to 'Log out', destroy_admin_session_path, :method=>'delete' %>
+<% end %>
+  <div class="container">
+    <div class="row">
+      <div class="span8 offset2">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
