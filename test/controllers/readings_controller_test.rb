@@ -14,6 +14,7 @@ class ReadingsControllerTest < ActionController::TestCase
   test "should get new" do
     get :new
     assert_response :success
+    throw(:warden)
   end
 
   test "should create reading" do
@@ -42,8 +43,11 @@ class ReadingsControllerTest < ActionController::TestCase
   test "should destroy reading" do
     assert_difference('Reading.count', -1) do
       delete :destroy, id: @reading
+      throw(:warden)
     end
 
     assert_redirected_to readings_path
   end
+
+  include Devise::TestHelpers
 end
