@@ -18,7 +18,7 @@
   </style>
 
 </head>
-<body>
+<body><a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 <% if admin_signed_in? %>
 <%= link_to 'Log out', destroy_admin_session_path, :method=>'delete' %>
 <% end %>
@@ -26,6 +26,15 @@
     <div class="row">
       <div class="span8 center offset2">
         <%= yield %>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="span8 center offset2">
+      <p class="footer-text">
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=yelinaung&amp;repo=books&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe><iframe src="http://ghbtns.com/github-btn.html?user=yelinaung&repo=books&type=fork" allowtransparency="true" frameborder="0" scrolling="0" width="53" height="20"></iframe>
+      </p>
       </div>
     </div>
   </div>
