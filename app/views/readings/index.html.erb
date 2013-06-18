@@ -1,24 +1,27 @@
 <h1>My readings</h1>
-
-<div class="content">
-  <% @readings.each do |book| %>
-  <span> <%= image_tag book.picture %></span>
-  <span> Title </span> : <span class="book-title"><%= book.title %></span><br>
-  <span> Author </span> : <span class="author"><%= book.author %></span><br>
-  <span> Start </span> : <span class="book-start"><%= book.start %></span><br>
-  <span> Progress </span> : <span class="progress"><%= book.progress %></span><br>
-  <span> Comment </span> : <span><%= book.comment %></span><br>
-  <div class="divider">
-  </div>
-<div>
-  <% if admin_signed_in? %>
-    <%= link_to 'New Reading', new_reading_path %>
-    <%= link_to 'Show', book %>
-    <%= link_to 'Edit', edit_reading_path(book) %></td>
-    <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
+<% @readings.each do |book| %>
+<table width="70%">
+  <caption> </caption>
+  <tbody>
+    <tr>
+      <td width="85%">
+        <span> Title </span> : <span class="book-title"><%= book.title %></span><br>
+        <span> Author </span> : <span class="author"><%= book.author %></span><br>
+        <span> Start </span> : <span class="book-start"><%= book.start %></span><br>
+        <span> Progress </span> : <span class="progress"><%= book.progress %></span><br>
+        <span> Comment </span> : <span><%= book.comment %></span><br>
+      </td>
+      <td width="15%">
+        <span> <%= image_tag book.picture %></span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+      <div class="divider">
+      </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
 <% end %>
-</div>
-</div>
-<br>
 

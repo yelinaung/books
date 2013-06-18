@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class ReadingsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
+
   setup do
     @reading = readings(:one)
   end
@@ -31,6 +33,7 @@ class ReadingsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
+    throw(:warden)
     get :edit, id: @reading
     assert_response :success
   end
@@ -41,9 +44,9 @@ class ReadingsControllerTest < ActionController::TestCase
   end
 
   test "should destroy reading" do
+    throw(:warden)
     assert_difference('Reading.count', -1) do
       delete :destroy, id: @reading
-      throw(:warden)
     end
 
     assert_redirected_to readings_path

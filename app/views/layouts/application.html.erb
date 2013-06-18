@@ -10,6 +10,11 @@
     body {
       font-family: 'Roboto', sans-serif;
     }
+    .center {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
   </style>
 
 </head>
@@ -19,7 +24,7 @@
 <% end %>
   <div class="container">
     <div class="row">
-      <div class="span8 offset2">
+      <div class="span8 center offset2">
         <%= yield %>
       </div>
     </div>
