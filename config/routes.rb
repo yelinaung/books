@@ -2,6 +2,7 @@ Book::Application.routes.draw do
   devise_for :admins
   resources :readings
 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -57,3 +58,4 @@ Book::Application.routes.draw do
   #     resources :products
   #   end
 end
+

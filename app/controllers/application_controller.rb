@@ -7,5 +7,9 @@ class ApplicationController < ActionController::Base
     # Redirect to original page after redirect
     request.referrer
   end
+
+  def not_found
+    raise ActionController::RoutingError.new('Not Fount')
+  end
 end
 
