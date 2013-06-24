@@ -69,3 +69,7 @@ end
 
 # RMaigick
 gem 'rmagick'
+
+# Font-Awesome
+gem "font-awesome-rails"
+
