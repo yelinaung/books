@@ -1,9 +1,12 @@
+<% Reading.all.each do |book| %>
   <% if admin_signed_in? %>
     <%= link_to 'New Reading', new_reading_path %>
     <%= link_to 'Show', book %>
     <%= link_to 'Edit', edit_reading_path(book) %></td>
     <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
   <span> <%= image_tag @reading.picture %></span>
